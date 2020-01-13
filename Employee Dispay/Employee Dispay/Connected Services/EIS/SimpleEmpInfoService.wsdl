@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.radford.edu/EWS" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.radford.edu/EWS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">provides single read-only Employee information to any platform</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.radford.edu/EWS">
+      <s:element name="getEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EIN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEmployeeResult" type="tns:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Employee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleInitial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SSN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CellPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfficeLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateHired" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateOfBirth" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxExemptions" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxFilingStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExtraWithholdings" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateOfLastRaise" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SalaryOrWage" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupervisorEIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConstructorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RevNum" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getEmployeesList">
+        <s:complexType />
+      </s:element>
+      <s:element name="getEmployeesListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEmployeesListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatesList">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStatesListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStatesListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeptList">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDeptListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDeptListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Employee" nillable="true" type="tns:Employee" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:getEmployee" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:getEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeesListSoapIn">
+    <wsdl:part name="parameters" element="tns:getEmployeesList" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeesListSoapOut">
+    <wsdl:part name="parameters" element="tns:getEmployeesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatesListSoapIn">
+    <wsdl:part name="parameters" element="tns:getStatesList" />
+  </wsdl:message>
+  <wsdl:message name="getStatesListSoapOut">
+    <wsdl:part name="parameters" element="tns:getStatesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDeptListSoapIn">
+    <wsdl:part name="parameters" element="tns:getDeptList" />
+  </wsdl:message>
+  <wsdl:message name="getDeptListSoapOut">
+    <wsdl:part name="parameters" element="tns:getDeptListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeeHttpGetIn">
+    <wsdl:part name="EIN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeeHttpGetOut">
+    <wsdl:part name="Body" element="tns:Employee" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeesListHttpGetIn" />
+  <wsdl:message name="getEmployeesListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getStatesListHttpGetIn" />
+  <wsdl:message name="getStatesListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getDeptListHttpGetIn" />
+  <wsdl:message name="getDeptListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeeHttpPostIn">
+    <wsdl:part name="EIN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeeHttpPostOut">
+    <wsdl:part name="Body" element="tns:Employee" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeesListHttpPostIn" />
+  <wsdl:message name="getEmployeesListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getStatesListHttpPostIn" />
+  <wsdl:message name="getStatesListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getDeptListHttpPostIn" />
+  <wsdl:message name="getDeptListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="SimpleEmpInfoServiceSoap">
+    <wsdl:operation name="getEmployee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get an employee object</wsdl:documentation>
+      <wsdl:input message="tns:getEmployeeSoapIn" />
+      <wsdl:output message="tns:getEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of Employees to use in dropdown list, etc. </wsdl:documentation>
+      <wsdl:input message="tns:getEmployeesListSoapIn" />
+      <wsdl:output message="tns:getEmployeesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of U.S. States </wsdl:documentation>
+      <wsdl:input message="tns:getStatesListSoapIn" />
+      <wsdl:output message="tns:getStatesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeptList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a list of the departments</wsdl:documentation>
+      <wsdl:input message="tns:getDeptListSoapIn" />
+      <wsdl:output message="tns:getDeptListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SimpleEmpInfoServiceHttpGet">
+    <wsdl:operation name="getEmployee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get an employee object</wsdl:documentation>
+      <wsdl:input message="tns:getEmployeeHttpGetIn" />
+      <wsdl:output message="tns:getEmployeeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of Employees to use in dropdown list, etc. </wsdl:documentation>
+      <wsdl:input message="tns:getEmployeesListHttpGetIn" />
+      <wsdl:output message="tns:getEmployeesListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of U.S. States </wsdl:documentation>
+      <wsdl:input message="tns:getStatesListHttpGetIn" />
+      <wsdl:output message="tns:getStatesListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeptList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a list of the departments</wsdl:documentation>
+      <wsdl:input message="tns:getDeptListHttpGetIn" />
+      <wsdl:output message="tns:getDeptListHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SimpleEmpInfoServiceHttpPost">
+    <wsdl:operation name="getEmployee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get an employee object</wsdl:documentation>
+      <wsdl:input message="tns:getEmployeeHttpPostIn" />
+      <wsdl:output message="tns:getEmployeeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of Employees to use in dropdown list, etc. </wsdl:documentation>
+      <wsdl:input message="tns:getEmployeesListHttpPostIn" />
+      <wsdl:output message="tns:getEmployeesListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return list of U.S. States </wsdl:documentation>
+      <wsdl:input message="tns:getStatesListHttpPostIn" />
+      <wsdl:output message="tns:getStatesListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeptList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">get a list of the departments</wsdl:documentation>
+      <wsdl:input message="tns:getDeptListHttpPostIn" />
+      <wsdl:output message="tns:getDeptListHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SimpleEmpInfoServiceSoap" type="tns:SimpleEmpInfoServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getEmployee">
+      <soap:operation soapAction="http://www.radford.edu/EWS/getEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeesList">
+      <soap:operation soapAction="http://www.radford.edu/EWS/getEmployeesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatesList">
+      <soap:operation soapAction="http://www.radford.edu/EWS/getStatesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeptList">
+      <soap:operation soapAction="http://www.radford.edu/EWS/getDeptList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SimpleEmpInfoServiceSoap12" type="tns:SimpleEmpInfoServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getEmployee">
+      <soap12:operation soapAction="http://www.radford.edu/EWS/getEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeesList">
+      <soap12:operation soapAction="http://www.radford.edu/EWS/getEmployeesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatesList">
+      <soap12:operation soapAction="http://www.radford.edu/EWS/getStatesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeptList">
+      <soap12:operation soapAction="http://www.radford.edu/EWS/getDeptList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SimpleEmpInfoServiceHttpGet" type="tns:SimpleEmpInfoServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="getEmployee">
+      <http:operation location="/getEmployee" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeesList">
+      <http:operation location="/getEmployeesList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatesList">
+      <http:operation location="/getStatesList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeptList">
+      <http:operation location="/getDeptList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SimpleEmpInfoServiceHttpPost" type="tns:SimpleEmpInfoServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getEmployee">
+      <http:operation location="/getEmployee" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeesList">
+      <http:operation location="/getEmployeesList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatesList">
+      <http:operation location="/getStatesList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeptList">
+      <http:operation location="/getDeptList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SimpleEmpInfoService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">provides single read-only Employee information to any platform</wsdl:documentation>
+    <wsdl:port name="SimpleEmpInfoServiceSoap" binding="tns:SimpleEmpInfoServiceSoap">
+      <soap:address location="http://itec-web-dev04.radford.edu/ews/SimpleEmpInfoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SimpleEmpInfoServiceSoap12" binding="tns:SimpleEmpInfoServiceSoap12">
+      <soap12:address location="http://itec-web-dev04.radford.edu/ews/SimpleEmpInfoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SimpleEmpInfoServiceHttpGet" binding="tns:SimpleEmpInfoServiceHttpGet">
+      <http:address location="http://itec-web-dev04.radford.edu/ews/SimpleEmpInfoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SimpleEmpInfoServiceHttpPost" binding="tns:SimpleEmpInfoServiceHttpPost">
+      <http:address location="http://itec-web-dev04.radford.edu/ews/SimpleEmpInfoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

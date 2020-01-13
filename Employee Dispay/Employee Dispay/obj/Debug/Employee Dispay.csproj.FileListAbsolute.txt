@@ -1,0 +1,10 @@
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\bin\Debug\Employee Dispay.exe.config
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\bin\Debug\Employee Dispay.exe
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\bin\Debug\Employee Dispay.pdb
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\obj\Debug\Employee Dispay.csprojAssemblyReference.cache
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\obj\Debug\Employee_Dispay.Form1.resources
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\obj\Debug\Employee_Dispay.Properties.Resources.resources
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\obj\Debug\Employee Dispay.csproj.GenerateResource.cache
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\obj\Debug\Employee Dispay.csproj.CoreCompileInputs.cache
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\obj\Debug\Employee Dispay.exe
+C:\Users\mjjtr\Desktop\VS workspace\Employee Dispay\Employee Dispay\obj\Debug\Employee Dispay.pdb
